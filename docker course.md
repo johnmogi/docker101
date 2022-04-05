@@ -32,9 +32,15 @@ https://www.skillshare.com/classes/Docker-and-Docker-Compose-Project-Deployment-
    COPY package\*.json ./
    RUN npm install
    COPY . .
+   <!-- EXPOSE 3000
+   CMD ["node", "run start"] -->
 
 7. docker-compose build
 
 8. check running: docker images
+dc.yml:
+command: npm run start
+ports: /n- [__]"3000:3000"
+ <!-- <host>:<container> -->
 
 9.
