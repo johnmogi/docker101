@@ -1,0 +1,21 @@
+{
+  "name": "docker101",
+  "version": "1.0.0",
+  "description": "In this snippets of a cheat sheet ...",
+  "main": "index.js",
+  "scripts": {
+    "git": "git add --all && git commit -m",
+    "postgit":"git push --all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnmogi/docker101.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnmogi/docker101/issues"
+  },
+  "homepage": "https://github.com/johnmogi/docker101#readme"
+}
