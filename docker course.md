@@ -27,7 +27,7 @@ https://www.skillshare.com/classes/Docker-and-Docker-Compose-Project-Deployment-
 5. docker images:
    https://www.skillshare.com/classes/Docker-and-Docker-Compose-Project-Deployment-From-Scratch/377054641/projects?via=search-layout-grid
 
-6. FROM node:13
+6. FROM node:13.12.0-alpine
    WORKDIR /usr/src/app
    COPY package\*.json ./
    RUN npm install
@@ -43,4 +43,16 @@ command: npm run start
 ports: /n- [__]"3000:3000"
  <!-- <host>:<container> -->
 
-9.
+9. dc build | dc up
+
+10. docker hub --official image -- slim image \*alpine - smaller size
+11. compose file:
+    restart: unless-stopped
+    https://docs.docker.com/compose/compose-file/
+
+12. enviroment in dc:
+    [.]api:
+    [. ]environment:
+    [ -] PORT= 3000
+
+13.
