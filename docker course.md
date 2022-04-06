@@ -24,10 +24,21 @@ https://www.skillshare.com/classes/Docker-and-Docker-Compose-Project-Deployment-
 4. cd api ; mkdir src ; touch index.js;
    sed "start":"nodemon index.js" | package.json
 
-5. docker images:
+5. index.js:
+   const express = require("express");
+   const app = express();
+   const PORT = process.env.PORT;
+   const HOST = process.env.HOST;
+   app.get("/test", (req, res) => {
+   res.send("all correct");
+   });
+   app.listen(PORT);
+   console.log(`started at http://localhost:${PORT}, destination: ${HOST}`);
+
+6. docker images:
    https://www.skillshare.com/classes/Docker-and-Docker-Compose-Project-Deployment-From-Scratch/377054641/projects?via=search-layout-grid
 
-6. FROM node:13.12.0-alpine
+7. FROM node:13.12.0-alpine
    WORKDIR /usr/src/app
    COPY package\*.json ./
    RUN npm install
@@ -35,24 +46,28 @@ https://www.skillshare.com/classes/Docker-and-Docker-Compose-Project-Deployment-
    <!-- EXPOSE 3000
    CMD ["node", "run start"] -->
 
-7. docker-compose build
+8. docker-compose build
 
-8. check running: docker images
+9. check running: docker images
 dc.yml:
 command: npm run start
 ports: /n- [__]"3000:3000"
  <!-- <host>:<container> -->
 
-9. dc build | dc up
+10. dc build | dc up
 
-10. docker hub --official image -- slim image \*alpine - smaller size
-11. compose file:
+11. docker hub --official image -- slim image \*alpine - smaller size
+12. compose file:
     restart: unless-stopped
     https://docs.docker.com/compose/compose-file/
 
-12. enviroment in dc:
+13. environment in dc:
     [.]api:
     [. ]environment:
     [ -] PORT= 3000
+    environment: - PORT=3000 - HOST=http://johnmogi.com
 
-13.
+14. api> npm i mongoose
+    https://mongoosejs.com/docs/api.html
+
+15.

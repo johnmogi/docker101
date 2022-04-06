@@ -7,4 +7,5 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - PORT= 3000
+      - PORT=3000
+      - HOST=http://johnmogi.com
