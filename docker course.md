@@ -69,5 +69,21 @@ ports: /n- [__]"3000:3000"
 
 14. api> npm i mongoose
     https://mongoosejs.com/docs/api.html
+    https://mongoosejs.com/docs/connections.html
 
-15.
+15. issues with indentation:
+    installed vscode extention YAML + indent rainbow
+    current dc version--
+    version: "3"
+    services:
+    api:
+    build: ./api
+    command: npm run start
+    restart: unless-stopped
+    ports: - "3000:3000"
+    environment: - PORT=3000 - HOST=http://johnmogi.com
+    depends_on: - mongo_db //this chaines up the hirerchy
+    mongo_db:
+    image: mongo:latest // pulled from https://hub.docker.com/ - use tags - look for official, alpine etc.
+
+16.

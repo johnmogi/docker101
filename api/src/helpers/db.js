@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-// mongoose.connect("mongodb://localhost:27017/myapp");
+const { db } = require("../config");
 
-module.exports.connectDB = () => {
-  mongoose.connect();
+module.exports.connectDb = () => {
+  mongoose.connect(db, { useNewUrlParser: true });
   return mongoose.connection;
 };
